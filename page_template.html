@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>theosteiner.de</title>
+</head>
+<body class="bg-yellow-300" style="transition: background-color 1s ease;">
+    <!-- @todo den header richtig responsive machen (background-click to toggle) und auf tailwind umstellen-->
+    <div id="navBG" class="hidden absolute z-10 h-screen w-screen opacity-80 bg-gradient-to-b from-white via-white"></div>
+    <header class="absolute z-20 w-full text-logo-red font-mono">
+        <nav>
+            <div class="flex items-center justify-between px-2 py-3">
+                <img src="img/compressed_{theosteiner}.svg" alt="Theo Steiner logo">
+                <div>
+                    <button type="button" onclick="onMenuClick()" class="h-8 sm:h-16 md:h-20 lg:h-16 w-8 sm:w-16 md:w-20 lg:w-16 text-gray-700 focus:text-gray-400 focus:outline-none hover:text-gray-400">
+                        <svg id="burgerMenu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="crossMenu" style="display: none;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="navLinks" style="display: none;" class="px-2 pt-2 pb-4 text-xl sm:text-4xl md:text-5xl lg:text-3xl text-center lg:w-2/3 lg:m-auto lg:flex-row">
+                <a href="#" class="px-2 py-1 sm:py-4 block font-semibold rounded sm:rounded-lg border-2 sm:border-4 border-logo-red bg-white bg-opacity-60 hover:bg-yellow-300 mt-4 sm:mt-8 lg:mt-0">App-Development</a>
+                <a href="#" class="px-2 py-1 sm:py-4 block font-semibold rounded sm:rounded-lg border-2 sm:border-4 border-logo-red bg-white bg-opacity-60 hover:bg-yellow-300 mt-8 sm:mt-12 lg:mt-8">Web-Development</a>
+                <a href="#" class="px-2 py-1 sm:py-4 block font-semibold rounded sm:rounded-lg border-2 sm:border-4 border-logo-red bg-white bg-opacity-60 hover:bg-yellow-300 mt-8 sm:mt-12 lg:mt-8">Japanese</a>
+                <a href="#" class="px-2 py-1 sm:py-4 block font-semibold rounded sm:rounded-lg border-2 sm:border-4 border-logo-red bg-white bg-opacity-60 hover:bg-yellow-300 mt-8 sm:mt-12 lg:mt-8">Creative</a>
+                <a href="#" class="px-2 py-1 sm:py-4 block font-semibold rounded sm:rounded-lg border-2 sm:border-4 border-logo-red bg-white bg-opacity-60 hover:bg-yellow-300 mt-8 sm:mt-12 lg:mt-8">About</a>
+            </div>
+        </nav>
+    </header>
+    <div class="w-full h-full pt-20">
+        <h1 class="text-2xl font-mono text-center mt-20" > Ooops! It seems like you found a Page I haven't coded yet. Be patient, I'll get it done this century. I Promise!</h1>
+        <h2 class="text-xl font-mono text-center mt-10"> しまった、しまった、島倉千代子。</h2>
+        <h2 class="text-2xl font-mono text-center mt-10">このページはまだ工事中です。</h2>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html> 
+
+
+
+<!-- Übergang von hintergrund zu patterns mit style="transition-property: background-color; transition-duration: 0.1s;" im css von einem element?*/-->
