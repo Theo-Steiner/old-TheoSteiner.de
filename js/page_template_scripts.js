@@ -52,7 +52,7 @@ var braces = document.getElementById("braces");
 var skill = document.getElementById("skill");
 
 var showParagraphs = document.querySelectorAll("#showSection > div > pre");
-var showButtons = document.querySelectorAll("#showSection > div > a");
+var showButtons = document.querySelectorAll("#showSection > div > button");
 
 var webDevParagraphs = ["lets workTogether(you, me):", "  my_skills_(Web&App Development)", "  verySociable&&location==Tokyo","\tmy_languages = {","\t  WEB: 'js, python, html + css',","\t  APP: 'dart ()=> [iOS+Droid]',","\t  HUMAN: 'jp, en, ger', ...}","  if my.skills==your.requirements:"];
 var webDevButtons = ["Learn More!", "Contact Me!"];
@@ -269,7 +269,3 @@ function pause(breakTime) {
         setTimeout(resolve, breakTime);
     })
 }
-
-// pauseAnimation = true;
-// globalPhase = 5;
-timeCoordinator();
