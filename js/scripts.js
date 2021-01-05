@@ -68,12 +68,11 @@ var creativeButtons = ["23-Ku-Project"]
 async function timeCoordinator() {
     switch(globalPhase) { // Activate [Base] and prepare transition to [Japanese]
         case 0:
-            await pause(2000);
+            await pause(200);
+            document.getElementById("contentDiv").style.visibility = "visible";
             await asyncTypeWriter(line1, "Hey there! ");
             await asyncTypeWriter(line1, "My name is");
             logo.classList.remove("opacity-0");
-
-
             await pause(1000);
             await asyncTypeWriter(line2, "and I do:");
             braces.classList.remove("opacity-0");
@@ -84,7 +83,7 @@ async function timeCoordinator() {
         case 1: // Activate [WebDev]
             document.body.style.backgroundImage = "url('img/circuit-board.svg')"
             document.body.style.backgroundColor = "#E5E7EB";
-            await asyncTypeWriter(skill,"Web-Development", 100, true);
+            await asyncTypeWriter(skill,"Web-Development", 80, true);
             for (i = 0; i < showParagraphs.length; i++) {
                 await asyncTypeWriter(showParagraphs[i],webDevParagraphs[i],20);
             }
@@ -110,7 +109,7 @@ async function timeCoordinator() {
             await pause(2000);
             await asyncRewrite(line2, 3, "speak:");
             skill.classList.add("font-sans");
-            await asyncTypeWriter(skill,"Japanese", 100, true);
+            await asyncTypeWriter(skill,"Japanese", 80, true);
             if (!pauseAnimation) {
                 setTimeout(timeCoordinator, 400);
             }
@@ -155,7 +154,7 @@ async function timeCoordinator() {
             await asyncRewrite(line2, 7, "'m trying to be:");
             skill.classList.add("font-serif");
             skill.classList.remove("font-sans");
-            await asyncTypeWriter(skill,"Creative", 100, true);
+            await asyncTypeWriter(skill,"Creative", 80, true);
             if (!pauseAnimation) {
                 setTimeout(timeCoordinator, 400);
             }
@@ -209,7 +208,7 @@ async function timeCoordinator() {
 
 // typeWriter
 
-async function asyncTypeWriter(element, txt, speed=80, flashOff = false) {
+async function asyncTypeWriter(element, txt, speed=60, flashOff = false) {
     if(!flashOff){toggleCursor(element);}
     await pause(speed*6);
     for (var i = 0; i < txt.length; i++) {
@@ -220,7 +219,7 @@ async function asyncTypeWriter(element, txt, speed=80, flashOff = false) {
     if(!flashOff){toggleCursor(element);}
 }
 
-async function asyncErasor(element, speed=80, flashOff = false) {
+async function asyncErasor(element, speed=60, flashOff = false) {
     if(!flashOff){toggleCursor(element);}
     await pause(speed*6);
     while (element.textContent.length > 0) {
@@ -231,7 +230,7 @@ async function asyncErasor(element, speed=80, flashOff = false) {
     if(!flashOff){toggleCursor(element);}
 }
 
-async function asyncRewrite(element, cutoff, newtxt, speed=80, flashOff = false) {
+async function asyncRewrite(element, cutoff, newtxt, speed=60, flashOff = false) {
     if(!flashOff){toggleCursor(element);}
     await pause(speed*6);
     for (var i = 0; i < cutoff; i++) {

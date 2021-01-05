@@ -712,6 +712,11 @@ video {
   margin: auto;
 }
 
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -784,6 +789,10 @@ video {
   padding-bottom: 1rem;
 }
 
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
 .pt-20 {
   padding-top: 5rem;
 }
@@ -839,8 +848,16 @@ video {
   color: rgba(156, 163, 175, var(--tw-text-opacity));
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .tracking-tighter {
   letter-spacing: -0.05em;
+}
+
+.visible {
+  visibility: visible;
 }
 
 .w-8 {
