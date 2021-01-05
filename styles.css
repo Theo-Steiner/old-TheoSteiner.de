@@ -666,10 +666,6 @@ video {
   font-family: Source Code Pro, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-.font-medium {
-  font-weight: 500;
-}
-
 .font-semibold {
   font-weight: 600;
 }
@@ -846,6 +842,10 @@ video {
 .focus\:text-gray-400:focus {
   --tw-text-opacity: 1;
   color: rgba(156, 163, 175, var(--tw-text-opacity));
+}
+
+.text-opacity-95 {
+  --tw-text-opacity: 0.95;
 }
 
 .underline {

@@ -69,7 +69,7 @@ async function timeCoordinator() {
     switch(globalPhase) { // Activate [Base] and prepare transition to [Japanese]
         case 0:
             await pause(200);
-            document.getElementById("contentDiv").style.visibility = "visible";
+            document.body.style.visibility = "visible";
             await asyncTypeWriter(line1, "Hey there! ");
             await asyncTypeWriter(line1, "My name is");
             logo.classList.remove("opacity-0");
@@ -271,4 +271,10 @@ function pause(breakTime) {
 
 // pauseAnimation = true;
 // globalPhase = 5;
-timeCoordinator();
+
+var CSSloadcheck= setInterval(function () {
+    if (showSection.style.textOpacity = 0.95){
+        timeCoordinator();
+        clearInterval(CSSloadcheck);
+    }
+}, 100)
