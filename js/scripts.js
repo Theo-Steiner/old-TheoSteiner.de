@@ -70,6 +70,7 @@ async function timeCoordinator() {
         case 0:
             await pause(200);
             document.body.style.visibility = "visible";
+            await pause(200);
             await asyncTypeWriter(line1, "Hey there! ");
             await asyncTypeWriter(line1, "My name is");
             logo.classList.remove("opacity-0");
