@@ -211,7 +211,7 @@ async function timeCoordinator() {
             console.log("I was here")
             await asyncSVGRewrite(bodyLogoLetters,navLogoLetters);
             var main = document.querySelector("main");
-            main.innerHTML = '<h1 class="font-mono text-2xl text-center px-8 pt-40">Und hier kommen dann jetzt drei Karten mit den jeweiligen "Skills"</h1> <div class="flex-col lg:flex-row justify-between w-full h-1/3 mt-8"><div class="px-4 mt-4 m-auto w-3/4 lg:w-1/4 h-full border-4 border-logo-red rounded-lg shadow-xl"><h2>Web-Development</h2></div><div class="px-4 mt-4 m-auto w-3/4 lg:w-1/4 h-full border-4 border-logo-red bg-yellow-300 rounded-lg shadow-xl"><h2>Japanese</h2></div><div class="px-4 mt-4 m-auto w-3/4 lg:w-1/4 h-full border-4 border-logo-red bg-yellow-300 rounded-lg shadow-xl"><h2>Creative</h2></div></div>';
+            main.innerHTML = '<h1 class="font-mono text-2xl text-center px-8 pt-40">Und hier kommen dann jetzt drei Karten mit den jeweiligen "Skills"</h1> <div class="flex flex-col lg:flex-row justify-between w-full h-1/3 mt-8"><div class="px-4 mt-4 m-auto w-3/4 lg:w-1/4 h-full border-4 border-logo-red rounded-lg shadow-xl"><h2>Web-Development</h2></div><div class="px-4 mt-4 m-auto w-3/4 lg:w-1/4 h-full border-4 border-logo-red bg-yellow-300 rounded-lg shadow-xl"><h2>Japanese</h2></div><div class="px-4 mt-4 m-auto w-3/4 lg:w-1/4 h-full border-4 border-logo-red bg-yellow-300 rounded-lg shadow-xl"><h2>Creative</h2></div></div>';
 
     }
     globalPhase++
