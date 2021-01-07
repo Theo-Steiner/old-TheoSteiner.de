@@ -12,6 +12,8 @@ var navLinks = document.getElementById("navLinks");
 
 function onMenuClick() {
     if(!menuIsOpen) {
+        nav.style.width = "100vw";
+        nav.style.height = "100vh"
         nav.onclick = closeOnBackgroundClick;
         burgerMenu.style.display = "none";
         navLinks.style.display = "block";
@@ -24,6 +26,8 @@ function onMenuClick() {
         burgerMenu.style.display = "block";
         navBG.classList.add("hidden");
         nav.onclick = null;
+        nav.style.width = "";
+        nav.style.height = ""
         backgroundCounter = 0;
         menuIsOpen = false;
     }
@@ -41,26 +45,28 @@ function closeOnBackgroundClick() {
 var globalPhase = 0; 
 var pauseAnimation = false;
 
-var showSection = document.getElementById("showSection");
+
+var navLogoLetters = document.querySelectorAll("nav path");
 
 var line1 = document.getElementById("line1");
-
-var logo_o = document.getElementById("logo");
-
+var bodyLogoLetters = document.querySelectorAll("main path");
 var line2 = document.getElementById("line2");
 var braces = document.getElementById("braces");
 var skill = document.getElementById("skill");
 
-var showParagraphs = document.querySelectorAll("#showSection > div > pre");
+var showSection = document.getElementById("showSection");
+
+
+var showParagraphs = document.querySelectorAll("#showSection > pre");
 var showButtons = document.querySelectorAll("#showSection > div > a");
 
-var webDevParagraphs = ["lets workTogether(you, me):", "  my_skills_(Web&App Development)", "  verySociable&&location==Tokyo","\tmy_languages = {","\t  WEB: 'js, python, html + css',","\t  APP: 'dart ()=> [iOS+Droid]',","\t  HUMAN: 'jp, en, ger', ...}","  if my.skills==your.requirements:"];
+var webDevParagraphs = ["lets workTogether(you, me):", "  my_skills_(Web&App Development)", "  verySociable&&location==Tokyo","\tmy_languages = {","\t  WEB: 'js, python, html+css',","\t  APP: 'dart()=>[iOS+Droid]',","\t  HUMAN: 'jp, en, ger',...}","  if my.skills==your.requirements:"];
 var webDevButtons = ["Learn More!", "Contact Me!"];
 
-var japaneseParagraphs = ["My appetite for Sushi made me learn Japanese &", "Now Japanese Literature keeps me studying.", "", "I've been studying the Language since 2015 &", "Passed the highest level JLPT in December 2019.", "", "If you're interested in how I study Japanese &", "want to know what I do with the language, then:"];
+var japaneseParagraphs = ["My love for Sushi got me to study Japanese &", "now Japanese Literature keeps me studying.", "", "I've been studying the Language since 2015 &", "Passed the JLPT N1 level in December '19.", "", "If you're interested in how I study Japanese &", "want to know how I use the language, then:"];
 var japaneseButtons = ["Follow my Language Journey"];
 
-var creativeParagraphs = ["Since I call beautiful Tokyo my home now,", "I thought I could write a Blog about it.","But Tokyo is enormous.", "It's home to over 9 million people after all.", "How would you even approach a City that vast?", "Well,", "Tokyo is structured into 23 Wards (Ku).", "So why don't we just explore them one-by-one?"];
+var creativeParagraphs = ["Since I call beautiful Tokyo my home now,", "I thought I could write a Blog about it.","But Tokyo is enormous.", "It's home to over 9 million people after all.", "How do you even approach a City that big?", "Well,", "Tokyo is structured into 23 Wards (Ku).", "So why don't we explore them one-by-one?"];
 var creativeButtons = ["23-Ku-Project"]
 // rotiert die phase um 1 weiter. Phase 1 ist nur {theosteiner} mit gelbem hintergrund.
 // Phase 2 ist [Web-Development], Phase 3 ist [Japanisch] Phase, Phase 4 ist Creative
@@ -69,14 +75,14 @@ async function timeCoordinator() {
     switch(globalPhase) { // Activate [Base] and prepare transition to [Japanese]
         case 0:
             await pause(200);
-            document.body.style.visibility = "visible";
+            document.body.style.display = "block";
             await pause(200);
             await asyncTypeWriter(line1, "Hey there! ");
             await asyncTypeWriter(line1, "My name is");
-            logo.classList.remove("opacity-0");
+            await asyncSVGWriter(bodyLogoLetters);
             await pause(1000);
             await asyncTypeWriter(line2, "and I do:");
-            braces.classList.remove("opacity-0");
+            braces.style.opacity = 1;
             if (!pauseAnimation) {
                 setTimeout(timeCoordinator, 400);
             }
@@ -86,12 +92,14 @@ async function timeCoordinator() {
             document.body.style.backgroundColor = "#E5E7EB";
             await asyncTypeWriter(skill,"Web-Development", 80, true);
             for (i = 0; i < showParagraphs.length; i++) {
+                showParagraphs[i].classList.add("font-mono");
                 await asyncTypeWriter(showParagraphs[i],webDevParagraphs[i],20);
             }
 
             for (i = 0; i < showButtons.length; i++) {
+                showButtons[i].classList.add("font-mono");
                 showButtons[i].innerHTML = webDevButtons[i];
-                showButtons[i].classList.remove("opacity-0");
+                showButtons[i].style.opacity = 1;
             }
 
             if (!pauseAnimation) {
@@ -104,12 +112,11 @@ async function timeCoordinator() {
                 asyncErasor(showParagraphs[i], 20, true)
             }
             for (i = 0; i < showButtons.length; i++) {
-                showButtons[i].classList.add("opacity-0");
+                showButtons[i].style.opacity = 0;
             }
             asyncErasor(skill, 20, true);
             await pause(2000);
             await asyncRewrite(line2, 3, "speak:");
-            skill.classList.add("font-sans");
             await asyncTypeWriter(skill,"Japanese", 80, true);
             if (!pauseAnimation) {
                 setTimeout(timeCoordinator, 400);
@@ -119,7 +126,8 @@ async function timeCoordinator() {
             document.body.style.backgroundImage = "url('img/yellow-endless-clouds.svg')";
             document.body.style.backgroundColor = "#E5E7EB";
             for (i = 0; i < japaneseParagraphs.length; i++) {
-                showParagraphs[i].classList.add("font-sans","font-semibold");
+                showParagraphs[i].classList.remove("font-mono");
+                showParagraphs[i].classList.add("font-sans");
                 await asyncTypeWriter(showParagraphs[i],japaneseParagraphs[i],20);
             }
 
@@ -127,9 +135,10 @@ async function timeCoordinator() {
                 if (japaneseButtons[i] === undefined) {
                     showButtons[i].classList.add("hidden");
                 } else {
+                    showButtons[i].classList.remove("font-mono");
                     showButtons[i].classList.add("font-sans");
                     showButtons[i].innerHTML = japaneseButtons[i];
-                    showButtons[i].classList.remove("opacity-0");
+                    showButtons[i].style.opacity = 1;
                 }
             }
 
@@ -143,7 +152,7 @@ async function timeCoordinator() {
                 asyncErasor(showParagraphs[i], 20, true)
             }
             for (i = 0; i < showButtons.length; i++) {
-                showButtons[i].classList.add("opacity-0");
+                showButtons[i].style.opacity = 0;
             }
             await pause(100);
             for (i = 0; i < showButtons.length; i++) {
@@ -153,8 +162,6 @@ async function timeCoordinator() {
             await pause(2000);
             await asyncErasor(skill, 40, true);
             await asyncRewrite(line2, 7, "'m trying to be:");
-            skill.classList.add("font-serif");
-            skill.classList.remove("font-sans");
             await asyncTypeWriter(skill,"Creative", 80, true);
             if (!pauseAnimation) {
                 setTimeout(timeCoordinator, 400);
@@ -164,8 +171,6 @@ async function timeCoordinator() {
             document.body.style.backgroundImage = "url('img/topography.svg')";
             document.body.style.backgroundColor = "#E5E7EB";
             for (i = 0; i < creativeParagraphs.length; i++) {
-                showParagraphs[i].classList.add("font-serif", "font-bold");
-                showParagraphs[i].classList.remove("font-sans");
                 await asyncTypeWriter(showParagraphs[i],creativeParagraphs[i],20);
             }
 
@@ -173,9 +178,8 @@ async function timeCoordinator() {
                 if (creativeButtons[i] === undefined) {
                     showButtons[i].classList.add("hidden");
                 } else {
-                    showButtons[i].classList.add("font-serif");
                     showButtons[i].innerHTML = creativeButtons[i];
-                    showButtons[i].classList.remove("opacity-0");
+                    showButtons[i].style.opacity = 1;
                 }
             }
             if (!pauseAnimation) {
@@ -189,7 +193,7 @@ async function timeCoordinator() {
                 asyncErasor(showParagraphs[i], 20, true)
             }
             for (i = 0; i < showButtons.length; i++) {
-                showButtons[i].classList.add("opacity-0");
+                showButtons[i].style.opacity = 0;
             }
             await pause(100);
             asyncErasor(skill, 20, true);
@@ -198,16 +202,45 @@ async function timeCoordinator() {
             for (i = 0; i < showButtons.length; i++) {
                 showButtons[i].classList.remove("hidden"),400
             }
-            braces.classList.add("opacity-0");
-            await pause(2000);
+            braces.style.opacity = 0;
+            if (!pauseAnimation) {
+                setTimeout(timeCoordinator, 2000);
+            }
+            break;
+        case 7:
+            console.log("I was here")
+            await asyncSVGRewrite(bodyLogoLetters,navLogoLetters);
+            var main = document.querySelector("main");
+            main.innerHTML = '<h1 class="font-mono text-2xl text-center px-8 pt-40">Und hier kommen dann jetzt drei Karten mit den jeweiligen "Skills"</h1>';
+
     }
     globalPhase++
-    globalPhase = globalPhase % 7
+    globalPhase = globalPhase % 8
 }
 
 
 
 // typeWriter
+
+async function asyncSVGWriter(svg_letters,speed=60) {
+    await pause(speed*6);
+    for (var i = 0; i<svg_letters.length; i++) {
+        svg_letters[i].classList.remove("hidden");
+        await pause(speed);
+    }
+}
+
+async function asyncSVGRewrite(erase_svg_letters,write_svg_letters,speed=80) {
+    await pause(speed*6);
+    console.log(erase_svg_letters.length)
+    for (var i = erase_svg_letters.length; i>0; i--) {
+        erase_svg_letters[i-1].classList.add("hidden");
+        await pause(speed/2);
+        console.log(i-1)
+        write_svg_letters[i-1].classList.remove("hidden");
+        await pause(speed);
+    }
+}
 
 async function asyncTypeWriter(element, txt, speed=60, flashOff = false) {
     if(!flashOff){toggleCursor(element);}
@@ -223,10 +256,11 @@ async function asyncTypeWriter(element, txt, speed=60, flashOff = false) {
 async function asyncErasor(element, speed=60, flashOff = false) {
     if(!flashOff){toggleCursor(element);}
     await pause(speed*6);
-    while (element.textContent.length > 0) {
+    while (element.textContent.length > 1) {
         element.textContent = element.textContent.slice(0, element.textContent.length-1)
         await pause(speed);
     }
+    element.innerHTML = "&#8203;"
     await pause(100)
     if(!flashOff){toggleCursor(element);}
 }
@@ -270,12 +304,12 @@ function pause(breakTime) {
     })
 }
 
-// pauseAnimation = true;
-// globalPhase = 5;
 
-var CSSloadcheck= setInterval(function () {
-    if (showSection.style.textOpacity = 0.95){
-        timeCoordinator();
-        clearInterval(CSSloadcheck);
-    }
-}, 100)
+// Drei einfache code-lines zum debuggen der jeweiligen Phases
+// pauseAnimation = true;
+// document.body.style.display = "block";
+// globalPhase = 7;
+
+
+timeCoordinator();
+
