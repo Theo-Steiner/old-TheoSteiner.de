@@ -307,8 +307,8 @@ function pause(breakTime) {
 
 // Drei einfache code-lines zum debuggen der jeweiligen Phases
 // pauseAnimation = true;
-// document.body.style.display = "block";
-// globalPhase = 7;
+document.body.style.display = "block";
+globalPhase = 7;
 
 
 timeCoordinator();
