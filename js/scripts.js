@@ -116,12 +116,12 @@ async function timeCoordinator() {
             await pause(2000);
             await asyncRewrite(line2, 3, "speak:");
             await asyncTypeWriter(skill,"Japanese", 80, true);
+            document.body.style.backgroundImage = "url('img/yellow-endless-clouds.svg')";
             if (!pauseAnimation) {
                 setTimeout(timeCoordinator, 400);
             }
             break;
         case 3: // Activate [Japanese]
-            document.body.style.backgroundImage = "url('img/yellow-endless-clouds.svg')";
             document.body.style.backgroundColor = "#E5E7EB";
             for (i = 0; i < japaneseParagraphs.length; i++) {
                 showParagraphs[i].classList.remove("font-mono");
@@ -161,12 +161,12 @@ async function timeCoordinator() {
             await asyncErasor(skill, 40, true);
             await asyncRewrite(line2, 7, "'m trying to be:");
             await asyncTypeWriter(skill,"Creative", 80, true);
+            document.body.style.backgroundImage = "url('img/topography.svg')";
             if (!pauseAnimation) {
                 setTimeout(timeCoordinator, 400);
             }
             break;
         case 5: // Activate [Creative]
-            document.body.style.backgroundImage = "url('img/topography.svg')";
             document.body.style.backgroundColor = "#E5E7EB";
             for (i = 0; i < creativeParagraphs.length; i++) {
                 await asyncTypeWriter(showParagraphs[i],creativeParagraphs[i],20);
