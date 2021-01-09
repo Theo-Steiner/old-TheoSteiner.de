@@ -237,6 +237,7 @@ async function asyncSVGRewrite(erase_svg_letters,write_svg_letters,speed=80) {
         console.log(i-1)
         write_svg_letters[i-1].style.visibility = "visible";
         await pause(speed);
+        document.getElementById("logo-link").style.visibility = "visible";
     }
 }
 
