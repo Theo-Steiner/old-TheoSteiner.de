@@ -870,6 +870,10 @@ video {
   letter-spacing: -0.05em;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .w-8 {
   width: 2rem;
 }

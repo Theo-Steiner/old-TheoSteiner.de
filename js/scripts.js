@@ -63,7 +63,7 @@ var showButtons = document.querySelectorAll("#showSection > div > a");
 var webDevParagraphs = ["lets workTogether(you, me):", "  my_skills_(Web&App Development)", "  verySociable&&location==Tokyo","\tmy_languages = {","\t  WEB: 'js, python, html+css',","\t  APP: 'dart()=>[iOS+Droid]',","\t  HUMAN: 'jp, en, ger',...}","  if my.skills==your.requirements:"];
 var webDevButtons = ["Learn More!", "Contact Me!"];
 
-var japaneseParagraphs = ["My love for Sushi got me to study Japanese &", "now Japanese Literature keeps me studying.", "", "I've been studying the Language since 2015 &", "Passed the JLPT N1 level in December '19.", "", "If you're interested in how I study Japanese &", "want to know how I use the language, then:"];
+var japaneseParagraphs = ["My love for Sushi got me to study Japanese &", "now Japanese Literature keeps me studying.", "", "I've been studying the Language since 2015 &", "passed the JLPT N1 level in December '19.", "", "If you're interested in how I study Japanese &", "want to know how I use the language, then:"];
 var japaneseButtons = ["Follow my Language Journey"];
 
 var creativeParagraphs = ["Since I call beautiful Tokyo my home now,", "I thought I could write a Blog about it.","But Tokyo is enormous.", "It's home to over 9 million people after all.", "How do you even approach a City that big?", "Well,", "Tokyo is structured into 23 Wards (Ku).", "So why don't we explore them one-by-one?"];
@@ -223,7 +223,7 @@ async function timeCoordinator() {
 async function asyncSVGWriter(svg_letters,speed=60) {
     await pause(speed*6);
     for (var i = 0; i<svg_letters.length; i++) {
-        svg_letters[i].classList.remove("hidden");
+        svg_letters[i].style.visibility = "visible";
         await pause(speed);
     }
 }
@@ -232,10 +232,10 @@ async function asyncSVGRewrite(erase_svg_letters,write_svg_letters,speed=80) {
     await pause(speed*6);
     console.log(erase_svg_letters.length)
     for (var i = erase_svg_letters.length; i>0; i--) {
-        erase_svg_letters[i-1].classList.add("hidden");
+        erase_svg_letters[i-1].style.visibility = "hidden";
         await pause(speed/2);
         console.log(i-1)
-        write_svg_letters[i-1].classList.remove("hidden");
+        write_svg_letters[i-1].style.visibility = "visible";
         await pause(speed);
     }
 }
