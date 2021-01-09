@@ -75,8 +75,6 @@ async function timeCoordinator() {
     switch(globalPhase) { // Activate [Base] and prepare transition to [Japanese]
         case 0:
             await pause(200);
-            document.body.style.display = "block";
-            await pause(200);
             await asyncTypeWriter(line1, "Hey there! ");
             await asyncTypeWriter(line1, "My name is");
             await asyncSVGWriter(bodyLogoLetters);
@@ -310,6 +308,5 @@ function pause(breakTime) {
 // document.body.style.display = "block";
 // globalPhase = 7;
 
-
-timeCoordinator();
+setTimeout(timeCoordinator,200);
 
