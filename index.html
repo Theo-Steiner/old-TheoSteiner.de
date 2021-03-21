@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Welcome to www.TheoSteiner.de! I am a App & Web-Developer based in Tokyo, Japan. I am using state of the art technology (JAMstack / Flutter) for my Projects. I am currently enrolled at Sophia University and working towards a Master's in Japanese Literature. Oh, and I speak Japanese!">
 
-    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'; document.querySelector('main').style.display = 'none';">
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet';">
     <noscript><link rel="stylesheet" href="styles.css"></noscript>
     
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,7 +76,7 @@
         <h4 class="mx-8 pt-10 font-mono text-center">本ページを表示するためにはJavascriptが必要です。</br> 全てのJavaScriptコードは私自身によって書かれたので、ご安心ください！</h4>
         <a class="block mx-8 pt-10 font-mono text-center" href="https://github.com/Theo-Steiner"> You're still not convinced? Check the source code on github yourself!</a>
     </noscript>
-    <main style="display: none;" class="h-screen w-full inline-flex flex-col px-2 text-logo-gray">
+    <main class="h-screen w-full inline-flex flex-col px-2 text-logo-gray">
             <section class="h-1/2 w-full md:w-11/12 lg:w-9/12 xl:w-7/12 m-auto pt-20 sm:pt-32 lg:pt-16 font-mono flex-col inline-flex justify-around lg:justify-evenly lg:pb-6 font-bold tracking-tighter md:tracking-tight text-2xl sm:text-5xl">
                 <div class="flex place-self-center">
                     <h2 id="line1" class="">&#8203;</h2>
@@ -132,7 +132,7 @@
             </section>
         </main>
         <!-- card section  -->
-        <section>
+        <section id="final-cards" style="display: none;">
             <h1 class="font-mono text-xl text-center px-8 pt-14">Und hier kommen dann jetzt drei Karten mit den jeweiligen "Skills"</h1> 
             <div class="flex flex-col lg:flex-row justify-between w-full my-6">
                 <div style="background-color: #E5E7EB; background-image: url('img/circuit-board.svg');" class="overflow-hidden h-64 mt-6 mx-4 m-auto lg:w-1/4 border-4 border-logo-red rounded-lg shadow-xl">

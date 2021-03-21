@@ -72,8 +72,10 @@ var creativeButtons = ["23-Ku-Project"]
 // Phase 2 ist [Web-Development], Phase 3 ist [Japanisch] Phase, Phase 4 ist Creative
 
 async function timeCoordinator() {
+    
     switch (globalPhase) { // Activate [Base] and prepare transition to [Japanese]
         case 0:
+            console.log("entered case 0")
             await pause(200);
             await asyncTypeWriter(line1, "Hey there! ");
             await asyncTypeWriter(line1, "My name is");
@@ -209,8 +211,10 @@ async function timeCoordinator() {
             console.log("I was here")
             await asyncSVGRewrite(bodyLogoLetters, navLogoLetters);
             var main = document.querySelector("main");
-            main.innerHTML = '';
-
+            main.style.display = "none";
+            await pause(100);
+            var cardSection = document.querySelector("#final-cards");
+            cardSection.style.display = "block";
     }
     globalPhase++
     globalPhase = globalPhase % 8
@@ -307,6 +311,6 @@ function pause(breakTime) {
 // Drei einfache code-lines zum debuggen der jeweiligen Phases
 // pauseAnimation = true;
 // globalPhase = 7;
-
+document.body.style.display = "block";
 setTimeout(timeCoordinator, 200);
 
