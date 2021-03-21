@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Welcome to www.TheoSteiner.de! I am a App & Web-Developer based in Tokyo, Japan. I am using state of the art technology (JAMstack / Flutter) for my Projects. I am currently enrolled at Sophia University and working towards a Master's in Japanese Literature. Oh, and I speak Japanese!">
 
-    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'; document.querySelector('main').style.display = '';">
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'; document.querySelector('main').style.display = 'none';">
     <noscript><link rel="stylesheet" href="styles.css"></noscript>
     
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,7 +74,7 @@
     <noscript>
         <h3 class="mx-8 pt-20 font-mono text-center">I'm sorry, but you have to enable Javascript to see this Page. </br> I wrote every line of code myself, so I can assure you that nothing evil is going on.</h3>
         <h4 class="mx-8 pt-10 font-mono text-center">本ページを表示するためにはJavascriptが必要です。</br> 全てのJavaScriptコードは私自身によって書かれたので、ご安心ください！</h4>
-        <a class="block underline mx-8 pt-10 font-mono text-center" href="https://github.com/Theo-Steiner"> You're still not convinced? Check the source code on github yourself!</a>
+        <a class="block mx-8 pt-10 font-mono text-center" href="https://github.com/Theo-Steiner"> You're still not convinced? Check the source code on github yourself!</a>
     </noscript>
     <main style="display: none;" class="h-screen w-full inline-flex flex-col px-2 text-logo-gray">
             <section class="h-1/2 w-full md:w-11/12 lg:w-9/12 xl:w-7/12 m-auto pt-20 sm:pt-32 lg:pt-16 font-mono flex-col inline-flex justify-around lg:justify-evenly lg:pb-6 font-bold tracking-tighter md:tracking-tight text-2xl sm:text-5xl">
@@ -131,6 +131,42 @@
                 </div>
             </section>
         </main>
+        <!-- card section  -->
+        <section>
+            <h1 class="font-mono text-xl text-center px-8 pt-14">Und hier kommen dann jetzt drei Karten mit den jeweiligen "Skills"</h1> 
+            <div class="flex flex-col lg:flex-row justify-between w-full my-6">
+                <div style="background-color: #E5E7EB; background-image: url('img/circuit-board.svg');" class="overflow-hidden h-64 mt-6 mx-4 m-auto lg:w-1/4 border-4 border-logo-red rounded-lg shadow-xl">
+                    <div style="backdrop-filter: blur(1px);" class="w-full h-full relative p-4">
+                        <h2 class="font-mono text-xl text-center tracking-tighter">I do Web-Development</h2>
+                        <p class="font-mono text-center mt-2">I am a Web & App-Developper Based in Tokyo.</p>
+                        <p class="font-mono text-center mt-2"> I hold a minor degree in Informatics from the University of Hamburg & enjoy building stuff with JavaScript, Python & Dart:</p>
+                        <div class="absolute inset-x-0 bottom-3 pt-2 flex items-start justify-around">
+                            <a href="page_template.html" class="block font-mono text-center rounded-lg font-bold border-2 border-logo-red p-2 sm:p-3 md:p-4 lg:p-3 bg-yellow-300 text-logo-red shadow-lg">See how I code!</a>
+                        </div>
+                    </div>
+                </div>
+                <div style="background-color: #E5E7EB; background-image: url('img/yellow-endless-clouds.svg');" class="relative overflow-hidden h-64 mt-6 m-auto mx-4 lg:w-1/4 border-4 border-logo-red bg-yellow-300 rounded-lg shadow-xl">
+                    <div style="backdrop-filter: blur(1px);" class="w-full h-full relative p-4">
+                        <h2 class="font-mono text-xl text-center tracking-tighter">I speak Japanese</h2>
+                        <p class="text-center mt-2">I am currently working towards a Master's degree in Japanese Studies at Sophia University.</p>
+                        <p class="text-center mt-2">I have done Interpretation & Translation Jobs in the past - so if you're looking for help with language stuff: hit me up!</p>
+                        <div class="absolute inset-x-0 bottom-3 pt-2 flex items-start justify-around">
+                            <a href="page_template.html" class="block  font-mono  text-center rounded-lg font-bold border-2 border-logo-red p-2 sm:p-3 md:p-4 lg:p-3 bg-yellow-300 text-logo-red shadow-lg">See how I code!</a>
+                        </div>
+                    </div>
+                </div>
+                <div style="background-color: #E5E7EB; background-image: url('img/topography.svg');" class="relative overflow-hidden h-64 mt-6 mx-4 m-auto lg:w-1/4 border-4 border-logo-red bg-yellow-300 rounded-lg shadow-xl">
+                    <div style="backdrop-filter: blur(1px);" class="w-full h-full relative p-4">
+                        <h2 class="text-xl text-center">I try being Creative</h2>
+                        <p class="text-center mt-2">I am currently working towards a Master's degree in Japanese Studies at Sophia University.</p>
+                        <p class="text-center mt-2">I have done Interpretation & Translation Jobs in the past - so if you're looking for help with language stuff: hit me up!</p>
+                        <div class="absolute inset-x-0 bottom-3 pt-2 flex items-start justify-around">
+                            <a href="page_template.html" class="block  font-mono  text-center rounded-lg font-bold border-2 border-logo-red p-2 sm:p-3 md:p-4 lg:p-3 bg-yellow-300 text-logo-red shadow-lg">See how I code!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     <script src="js/scripts.js" defer></script>
 </body>
 </html> 
